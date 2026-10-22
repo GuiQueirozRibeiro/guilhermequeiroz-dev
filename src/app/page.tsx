@@ -28,7 +28,6 @@ export default function HomePage() {
   return (
     <main>
       <Hero t={t} lang={lang} />
-      <Marquee t={t} lang={lang} />
       <Work t={t} lang={lang} onOpenProject={onOpenProject} />
       <About t={t} />
       <Highlights t={t} lang={lang} onOpenProject={onOpenProject} />

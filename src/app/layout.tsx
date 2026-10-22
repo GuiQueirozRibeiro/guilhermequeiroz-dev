@@ -53,12 +53,13 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: '/guilherme-icon-32.png', sizes: '32x32', type: 'image/png' },
-      { url: '/guilherme-icon-192.png', sizes: '192x192', type: 'image/png' },
-      { url: '/guilherme-icon-512.png', sizes: '512x512', type: 'image/png' },
+      { url: '/favicon-32.png', sizes: '32x32', type: 'image/png' },
+      { url: '/icon-192.png', sizes: '192x192', type: 'image/png' },
+      { url: '/icon-512.png', sizes: '512x512', type: 'image/png' },
+      { url: '/logo.svg', type: 'image/svg+xml' },
     ],
-    shortcut: '/guilherme-icon-192.png',
-    apple: '/guilherme-icon-180.png',
+    shortcut: '/favicon.ico',
+    apple: '/apple-touch-icon.png',
   },
   openGraph: {
     title: SITE_TITLE,

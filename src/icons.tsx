@@ -118,7 +118,7 @@ const ICONS: Record<string, Icon> = {
     </g>
   },
   rls: {
-    label: "Row Level Security", color: "#38bdf8", desc: { pt: "Isolamento de dados por linha no PostgreSQL.", en: "Row-level data isolation in PostgreSQL." },
+    label: "RLS", color: "#38bdf8", desc: { pt: "Isolamento de dados por linha no PostgreSQL.", en: "Row-level data isolation in PostgreSQL." },
     svg: <g fill="none" stroke="currentColor" strokeWidth="2">
       <rect x="8" y="10" width="32" height="6" rx="1" />
       <rect x="8" y="21" width="32" height="6" rx="1" />
@@ -290,14 +290,14 @@ const ICONS: Record<string, Icon> = {
     </g>
   },
   grpc: {
-    label: "gRPC & WebSocket", color: "#244c5a", desc: { pt: "Comunicação em tempo real e streaming.", en: "Real-time communication and streaming." },
+    label: "gRPC", color: "#244c5a", desc: { pt: "Comunicação em tempo real e streaming.", en: "Real-time communication and streaming." },
     svg: <g fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round">
       <path d="M6 18 h28 M28 12 l6 6 -6 6" />
       <path d="M42 30 H14 M20 24 l-6 6 6 6" />
     </g>
   },
   webhooks: {
-    label: "Pagamentos & Webhooks", color: "#22c55e", desc: { pt: "Asaas, Kiwify e conciliação automática.", en: "Asaas, Kiwify and automatic reconciliation." },
+    label: "Webhooks", color: "#22c55e", desc: { pt: "Asaas, Kiwify e conciliação automática.", en: "Asaas, Kiwify and automatic reconciliation." },
     svg: <g fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
       <rect x="4" y="12" width="40" height="26" rx="4" />
       <path d="M4 20 h40" strokeWidth="4" />
@@ -305,7 +305,7 @@ const ICONS: Record<string, Icon> = {
     </g>
   },
   youtube: {
-    label: "YouTube Live API", color: "#ff0000", desc: { pt: "Estado das transmissões em tempo real.", en: "Real-time broadcast state." },
+    label: "YouTube Live", color: "#ff0000", desc: { pt: "Estado das transmissões em tempo real.", en: "Real-time broadcast state." },
     svg: <g>
       <rect x="4" y="10" width="40" height="28" rx="8" fill="currentColor" />
       <path d="M20 17 L31 24 L20 31Z" fill="#fff" />
