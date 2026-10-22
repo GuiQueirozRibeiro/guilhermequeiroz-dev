@@ -70,11 +70,18 @@ export function Contador({ ate, de = 0, duracao = 1.8, sufixo = '' }: ContadorPr
     const el = ref.current;
     if (!el || prefersReducedMotion()) return;
 
-    // TODO(Guilherme): animar de `de` até `ate` quando o elemento entrar na tela.
-    // Mesmo comportamento do Contador do Batida: começa em `de`, conta com ease
-    // forte no fim e chama setValor a cada frame. Dica: gsap.to num objeto
-    // { n: de } com onUpdate, e scrollTrigger { trigger: el, once: true }.
-    // Devolva o cleanup (ctx.revert()) para não vazar tween ao desmontar.
+    const ctx = gsap.context(() => {
+      const obj = { n: de };
+      gsap.to(obj, {
+        n: ate,
+        duration: duracao,
+        ease: 'power4.out',
+        scrollTrigger: { trigger: el, start: 'top 85%', once: true },
+        onUpdate: () => setValor(obj.n),
+      });
+    });
+
+    return () => ctx.revert();
   }, [ate, de, duracao]);
 
   return (

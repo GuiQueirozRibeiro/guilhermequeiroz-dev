@@ -54,18 +54,23 @@ export const I18N: Record<Lang, Translations> = {
       hobbies: [
         {
           icon: "mentor",
-          title: "Ensinar",
-          description: "Faço mentoria de devs desde 2022: fundamentos, arquitetura, IA aplicada e code review em projetos reais.",
+          title: "Mentoria & Ensino",
+          description: "Mentor de uma turma de 12 alunos da UCB e mentoria individual de desenvolvedores em início de carreira.",
         },
         {
-          icon: "study",
-          title: "Continuar estudando",
-          description: "Pós-graduação (MIT) em Desenvolvimento Mobile no Instituto Infnet, com conclusão em 2026.",
+          icon: "project",
+          title: "Projetos Autorais",
+          description: "Gosto de experimentar: atualmente construindo o 'Mãos que Falam', tradutor voltado para usuários de Libras.",
         },
         {
-          icon: "city",
-          title: "Brasília",
-          description: "Moro e trabalho aqui — a foto deste site foi tirada com a cidade ao fundo.",
+          icon: "sport",
+          title: "Boxe & Muay Thai",
+          description: "Pratico artes marciais desde o início do ano para manter o foco, disciplina e a mente afiada fora do código.",
+        },
+        {
+          icon: "game",
+          title: "Jogos & Séries",
+          description: "Momentos de lazer para relaxar, além de continuar estudando na pós do Infnet.",
         },
       ],
       resumeTitle: "Currículo",
@@ -162,18 +167,23 @@ export const I18N: Record<Lang, Translations> = {
       hobbies: [
         {
           icon: "mentor",
-          title: "Teaching",
-          description: "I've mentored developers since 2022: fundamentals, architecture, applied AI and code review on real projects.",
+          title: "Mentorship & Teaching",
+          description: "Mentored a cohort of 12 students at UCB and provide ongoing 1-on-1 mentorship for software engineers.",
         },
         {
-          icon: "study",
-          title: "Still studying",
-          description: "Postgraduate degree (MIT) in Mobile Development at Instituto Infnet, finishing in 2026.",
+          icon: "project",
+          title: "Personal Projects",
+          description: "Curious and experimental: currently building 'Mãos que Falam', a sign-language translation app for Libras users.",
         },
         {
-          icon: "city",
-          title: "Brasília",
-          description: "I live and work here — the photo on this site was taken with the city in the background.",
+          icon: "sport",
+          title: "Boxing & Muay Thai",
+          description: "Practicing martial arts since early this year to stay disciplined, focused, and sharp outside the codebase.",
+        },
+        {
+          icon: "game",
+          title: "Gaming & Series",
+          description: "Downtime to recharge and unwind, alongside continuing studies in my postgraduate MIT degree.",
         },
       ],
       resumeTitle: "Resume",

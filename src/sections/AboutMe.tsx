@@ -30,6 +30,24 @@ const HOBBY_ICONS: Record<string, React.ReactNode> = {
       <path d="M9 13h6" />
     </svg>
   ),
+  sport: (
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M6 16.5l-3 3 1.5 1.5 3-3" />
+      <path d="M18 7.5l3-3-1.5-1.5-3 3" />
+      <path d="M14.5 4.5l5 5-9 9-5-5 9-9z" />
+    </svg>
+  ),
+  game: (
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+      <rect x="2" y="6" width="20" height="12" rx="6" />
+      <path d="M6 12h4m-2-2v4m9-3h.01m2 2h.01" />
+    </svg>
+  ),
+  project: (
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83" />
+    </svg>
+  ),
 };
 
 export function AboutMe({ t, onGoHome }: AboutMeProps) {
