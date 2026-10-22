@@ -1,0 +1,12 @@
+export { Hero } from './Hero';
+export { Nav } from './Nav';
+export { Marquee } from './Marquee';
+export { Work } from './Work';
+export { About } from './About';
+export { AboutMe } from './AboutMe';
+export { Highlights } from './Highlights';
+export { Stack } from './Stack';
+export { Services } from './Services';
+export { Contact } from './Contact';
+export { Tweaks } from './Tweaks';
+export { ProjectPage } from './ProjectPage';

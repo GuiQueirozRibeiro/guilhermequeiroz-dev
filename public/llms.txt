@@ -1,0 +1,34 @@
+# Guilherme Queiroz Ribeiro — Portfólio
+
+> Engenheiro de Software em Brasília (DF), com mais de 4 anos de experiência. Apps em React Native/Expo e Flutter, web em Next.js e APIs em Node.js/TypeScript — do banco de dados à publicação nas lojas.
+> Engenheiro de Software Pleno no Sistema Boss (tecnologia da Agência Sisters) e fundador da Exímia Tech.
+
+Site: https://guilhermequeiroz.dev
+LinkedIn: https://www.linkedin.com/in/guilherme-queiroz-ribeiro/
+GitHub: https://github.com/GuiQueirozRibeiro
+E-mail: guilherme.q.r@hotmail.com
+
+## Experiência
+
+- **Sistema Boss** (Agência Sisters) — Engenheiro de Software Pleno (Abr 2026 — Atual): Movimento Vida 360, Sisters Esportes, API Node.js/Express/Prisma sobre MySQL, app React Native/Expo com EAS e OTA, YouTube Live API, webhooks Asaas/Kiwify, Postmark.
+- **Exímia Tech** — Fundador & Tech Lead (Out 2023 — Atual): Agendai, ArenaX, 4 Play Arena, ERP de Condomínios.
+- **Setteone** — Engenheiro de Software Pleno (Nov 2025 — Abr 2026): CRM B2B offline-first (SQLite, Firestore, FFmpeg, SSO).
+- **Meta** — Engenheiro de Software, projeto Michelin (Jul 2025 — Out 2025): gestão de frotas global com Flutter, gRPC, WebSocket e BLoC; cobertura de testes de <5% para 95%+.
+- **TRF1** — Engenheiro de Software Fullstack (Abr 2022 — Abr 2024): monitoramento de servidores Linux (Python/Flask), GitLab self-hosted e CI/CD.
+
+## Projetos
+
+- Movimento Vida 360 — https://movimentovida360.com.br/
+- Sisters Organizador — https://organizador.agenciasisters.com.br/
+- Batida em Movimento — https://esportes.agenciasisters.com.br/batidaemmovimento
+- Agendai — https://agendai.tec.br/
+- Exímia Tech — https://www.eximiatech.com.br/
+- Michelin Fleet, ArenaX, Setteone CRM, ERP Condomínios (privados)
+
+## Formação
+
+- Bacharelado em Ciência da Computação — IESB (2025)
+- Pós-graduação (MIT) em Desenvolvimento Mobile — Instituto Infnet (2026)
+- Idiomas: Português (nativo), Inglês (B2+), Espanhol (intermediário)
+
+Site em português e inglês, tema claro/escuro.
