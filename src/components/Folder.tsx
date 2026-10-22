@@ -27,7 +27,7 @@ interface FolderProps {
 
 export default function Folder({ color = '#5227FF', size = 1, items = [], className = '' }: FolderProps) {
   // Cap at 3 (the CSS only defines fan-out positions for up to 3 sheets) but
-  // never pad — a folder with 2 real items should only ever show 2 papers.
+  // never pad - a folder with 2 real items should only ever show 2 papers.
   const papers: ReactNode[] = items.slice(0, 3);
 
   const [open, setOpen] = useState(false);

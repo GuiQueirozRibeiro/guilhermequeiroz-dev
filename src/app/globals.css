@@ -77,7 +77,7 @@ button {
   color: inherit;
 }
 
-/* Subtle grid background — monochromatic */
+/* Subtle grid background - monochromatic */
 body::before {
   content: '';
   position: fixed;
@@ -150,7 +150,7 @@ body::before {
 
 /* `::before` is generated content *inside* `.btn-char`, so it inherits
    whatever transform its host has. It keeps this exact local offset
-   (translateY(100%), always below its own box) at every state — as the
+   (translateY(100%), always below its own box) at every state - as the
    parent `.btn-char` slides from 0 to -100% on hover, this pseudo rides
    along and its on-screen offset resolves from +100% (hidden below) down
    to 0% (landing exactly in the vacated slot), with no transition of its
@@ -246,7 +246,7 @@ body::before {
   background: var(--bg);
 }
 
-/* The panel itself stays the exact page background (no mismatched tint) —
+/* The panel itself stays the exact page background (no mismatched tint) -
    this glowing seam at its lower edge is what reads as motion while it
    slides up and off, the same accent-colored "light line" motif used
    elsewhere on the site (PulseDot, gradient accents). */

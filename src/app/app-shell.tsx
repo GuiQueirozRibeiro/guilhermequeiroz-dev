@@ -43,7 +43,7 @@ export function AppShell({ children }: AppShellProps) {
   const router = useRouter();
   const pathname = usePathname();
   const [lang, setLang] = useState<Lang>(TWEAK_DEFAULTS.language as Lang);
-  // Always starts at the same default the server rendered with — reading the
+  // Always starts at the same default the server rendered with - reading the
   // real (possibly different) value from the DOM here, during render, would
   // make the very first client render diverge from the SSR output and throw
   // a hydration-mismatch error. The actual value is picked up right after,
@@ -52,10 +52,10 @@ export function AppShell({ children }: AppShellProps) {
   const [tweaksOn, setTweaksOn] = useState(false);
   const skipNextThemeWrite = useRef(true);
 
-  useScrollingTitle('Guilherme Queiroz — Software Engineer', 200, pathname === '/');
+  useScrollingTitle('Guilherme Queiroz - Software Engineer', 200, pathname === '/');
 
   // The inline script in layout.tsx already set the correct data-theme
-  // attribute (from localStorage / prefers-color-scheme) before hydration —
+  // attribute (from localStorage / prefers-color-scheme) before hydration -
   // that's what avoids a flash of the wrong theme. Pick that real value up
   // into React state post-mount, so it never affects the hydration diff.
   useEffect(() => {
@@ -71,7 +71,7 @@ export function AppShell({ children }: AppShellProps) {
   }, []);
 
   useEffect(() => {
-    // Skip the first run — the DOM attribute is already correct pre-hydration
+    // Skip the first run - the DOM attribute is already correct pre-hydration
     // (see effect above), so writing here too would just flash back to the
     // SSR default before the real value gets applied.
     if (skipNextThemeWrite.current) {
@@ -106,7 +106,7 @@ export function AppShell({ children }: AppShellProps) {
     try {
       window.localStorage.setItem('theme', v);
     } catch {
-      // localStorage unavailable (private mode, etc.) — theme just won't persist
+      // localStorage unavailable (private mode, etc.) - theme just won't persist
     }
     window.parent.postMessage({ type: '__edit_mode_set_keys', edits: { theme: v } }, '*');
   };

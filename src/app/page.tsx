@@ -3,7 +3,7 @@
 import dynamic from 'next/dynamic';
 import { useAppShell } from './app-shell';
 // Imported directly from their own files rather than the `@/sections` barrel
-// (`src/sections/index.ts`) — that barrel re-exports every section from one
+// (`src/sections/index.ts`) - that barrel re-exports every section from one
 // module, so importing anything through it (even just Hero/Marquee) pulls
 // every other section's module into the same eager chunk, which would
 // silently defeat the `dynamic()` splitting below.
@@ -15,7 +15,7 @@ import { Marquee } from '@/sections/Marquee';
 // weight (GSAP timelines, the GitHub calendar chain, icon set, etc.) off
 // the critical path for hydrating
 // the hero. `ssr` stays at its default (true), so the HTML is still fully
-// server-rendered for content/SEO — only the client JS is deferred.
+// server-rendered for content/SEO - only the client JS is deferred.
 const Work = dynamic(() => import('@/sections/Work').then((mod) => mod.Work));
 const About = dynamic(() => import('@/sections/About').then((mod) => mod.About));
 const Highlights = dynamic(() => import('@/sections/Highlights').then((mod) => mod.Highlights));

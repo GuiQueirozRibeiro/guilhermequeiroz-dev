@@ -9,7 +9,7 @@ import { gsap, prefersReducedMotion } from '../lib/animation';
 
 interface MarcadorProps {
   children: React.ReactNode;
-  /** Highlighter color — any CSS color, defaults to the accent at 35%. */
+  /** Highlighter color - any CSS color, defaults to the accent at 35%. */
   cor?: string;
   /** Seconds before the stroke starts once it scrolls into view. */
   atraso?: number;

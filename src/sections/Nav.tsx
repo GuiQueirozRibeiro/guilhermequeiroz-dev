@@ -134,7 +134,7 @@ export function Nav({ lang, setLang, t, theme, setTheme, onRouteHome }: NavProps
         </nav>
       </header>
 
-      {/* Mobile: hamburger only, no bar — toggles into an X and stays on top of the drawer */}
+      {/* Mobile: hamburger only, no bar - toggles into an X and stays on top of the drawer */}
       <button
         onClick={() => setMenuOpen(prev => !prev)}
         aria-label="menu"
@@ -148,7 +148,7 @@ export function Nav({ lang, setLang, t, theme, setTheme, onRouteHome }: NavProps
         )}
       </button>
 
-      {/* Mobile drawer backdrop — dims the page without covering it, drawer takes only part of the width */}
+      {/* Mobile drawer backdrop - dims the page without covering it, drawer takes only part of the width */}
       <div
         className={`md:hidden fixed inset-0 z-40 transition-opacity duration-300 ${menuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}
         onClick={() => setMenuOpen(false)}
@@ -156,7 +156,7 @@ export function Nav({ lang, setLang, t, theme, setTheme, onRouteHome }: NavProps
         aria-hidden="true"
       />
 
-      {/* Mobile drawer panel — slides in from the right, partial width */}
+      {/* Mobile drawer panel - slides in from the right, partial width */}
       <div
         className={`md:hidden fixed top-0 right-0 z-[45] h-full w-[78%] max-w-[320px] flex flex-col border-l border-line bg-[color-mix(in_oklab,var(--bg-2)_96%,transparent)] backdrop-blur-xl shadow-[-20px_0_50px_-20px_rgba(0,0,0,0.4)] transition-transform duration-300 ease-[cubic-bezier(.2,.7,.15,1)] ${menuOpen ? 'translate-x-0' : 'translate-x-full'}`}
       >

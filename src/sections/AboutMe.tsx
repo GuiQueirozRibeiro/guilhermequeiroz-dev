@@ -2,7 +2,6 @@
 
 import Image from 'next/image';
 import { Section, Reveal, BtnGhost } from '../ui';
-import Folder from '../components/Folder';
 import type { Translations } from '../types';
 
 interface AboutMeProps {
@@ -95,44 +94,32 @@ export function AboutMe({ t, onGoHome }: AboutMeProps) {
               <p className="text-base leading-[1.8] text-ink-2 max-w-[60ch]">{at.intro}</p>
             </Reveal>
 
-            <Reveal delay={300}>
-              <div className="mt-2 rounded-2xl border border-line bg-bg-2 p-6 flex flex-col sm:flex-row sm:items-center gap-6">
-                <div className="flex-shrink-0 flex justify-center py-2 sm:py-4 sm:pl-2">
-                  <Folder
-                    color="#f59e0b"
-                    size={0.85}
-                    items={[
-                      <a
-                        key="pt"
-                        href="/curriculo-pt.pdf"
-                        target="_blank"
-                        rel="noreferrer"
-                        aria-label={at.resumePt}
-                        onClick={(e) => e.stopPropagation()}
-                        className="absolute inset-0 flex items-center justify-center font-mono text-[10px] font-bold tracking-[0.04em] text-[#1a1a1a]"
-                      >
-                        PT-BR
-                      </a>,
-                      <a
-                        key="en"
-                        href="/curriculo-en.pdf"
-                        target="_blank"
-                        rel="noreferrer"
-                        aria-label={at.resumeEn}
-                        onClick={(e) => e.stopPropagation()}
-                        className="absolute inset-0 flex items-center justify-center font-mono text-[10px] font-bold tracking-[0.04em] text-[#1a1a1a]"
-                      >
-                        EN
-                      </a>,
-                    ]}
-                  />
-                </div>
+              <div className="mt-2 rounded-2xl border border-line bg-bg-2 p-6 flex flex-col gap-4">
                 <div>
-                  <div className="text-[15px] font-semibold tracking-[-0.01em] mb-1.5">{at.resumeTitle}</div>
+                  <div className="text-[15px] font-semibold tracking-[-0.01em] mb-1">{at.resumeTitle}</div>
                   <p className="text-[13.5px] leading-[1.7] text-ink-3">{at.resumeSub}</p>
                 </div>
+                <div className="flex flex-wrap items-center gap-3">
+                  <a
+                    href="/curriculo-pt.pdf"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl border border-line bg-card hover:border-accent text-[13px] font-medium transition-colors"
+                  >
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                    {at.resumePt}
+                  </a>
+                  <a
+                    href="/curriculo-en.pdf"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl border border-line bg-card hover:border-accent text-[13px] font-medium transition-colors"
+                  >
+                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                    {at.resumeEn}
+                  </a>
+                </div>
               </div>
-            </Reveal>
 
             <Reveal delay={350}>
               <div className="mt-2">

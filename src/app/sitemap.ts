@@ -2,7 +2,7 @@ import type { MetadataRoute } from 'next';
 import { PROJECTS } from '@/data/projects';
 import { SITE_URL } from '@/lib/seo';
 
-// Not the build/request time — Google explicitly advises against stamping
+// Not the build/request time - Google explicitly advises against stamping
 // lastmod with "now" on every crawl, since a date that never reflects real
 // content changes trains crawlers to ignore the field. Bumped by hand when
 // the project data actually changes.

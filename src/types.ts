@@ -187,7 +187,7 @@ export interface Project {
   year: string;
   role: LocalizedString;
   tags: string[];
-  /** Determines the project's accent color — see `PROJECT_CATEGORY_ACCENT` in `data/projects.ts`. */
+  /** Determines the project's accent color - see `PROJECT_CATEGORY_ACCENT` in `data/projects.ts`. */
   category: ProjectCategory;
   accent: string;
   tagline: LocalizedString;

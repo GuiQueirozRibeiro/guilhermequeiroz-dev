@@ -1,7 +1,7 @@
 'use client';
 
 import { useAppShell } from '../app-shell';
-// Imported directly, not from the `@/sections` barrel — see the note in
+// Imported directly, not from the `@/sections` barrel - see the note in
 // `app-shell.tsx` / `page.tsx`: importing through `index.ts` would pull every
 // home-page section into this route's bundle too.
 import { AboutMe } from '@/sections/AboutMe';

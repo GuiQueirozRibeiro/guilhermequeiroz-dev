@@ -339,7 +339,7 @@ export default function DecryptedText({
   }, [animateOn, hasAnimated, triggerDecrypt]);
 
   // Resets the animation state whenever `animateOn`/`text` change (including
-  // on mount) — done synchronously during render rather than in an effect,
+  // on mount) - done synchronously during render rather than in an effect,
   // per React's guidance for "adjusting state when props change" (avoids an
   // extra commit-then-re-render pass for what's otherwise a plain derived reset).
   const resetKey = `${animateOn}:${text}`;

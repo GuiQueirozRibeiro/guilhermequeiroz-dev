@@ -106,7 +106,7 @@ export function ProjectPage({ id, lang, t, onBack, onOpenProject }: ProjectPageP
                 style={{ background: 'color-mix(in oklab, #f5c451 8%, var(--card))', border: '1px solid color-mix(in oklab, #f5c451 32%, var(--line))' }}
               >
                 <span className="flex-shrink-0">🥇</span>
-                <span><b className="text-ink font-semibold">{project.award.title[lang]}</b> — {project.award.description[lang]}</span>
+                <span><b className="text-ink font-semibold">{project.award.title[lang]}</b> - {project.award.description[lang]}</span>
               </div>
             )}
 
@@ -191,7 +191,7 @@ export function ProjectPage({ id, lang, t, onBack, onOpenProject }: ProjectPageP
 
         {gallery.length > 1 && (
           <div className="mt-16 mb-4">
-            <div className="text-[13px] font-semibold text-ink-3 mb-5">— {qa.moreShots}</div>
+            <div className="text-[13px] font-semibold text-ink-3 mb-5">- {qa.moreShots}</div>
             <GalleryGrid items={gallery.slice(1)} accent={project.accent} lang={lang} />
           </div>
         )}
@@ -217,7 +217,7 @@ interface QABlockProps {
 function QABlock({ question, last, children }: QABlockProps) {
   return (
     <div className={last ? 'mb-8' : 'mb-8'}>
-      <div className="text-[13px] font-semibold text-ink-3 mb-2.5">— {question}</div>
+      <div className="text-[13px] font-semibold text-ink-3 mb-2.5">- {question}</div>
       <div className="text-[16px] leading-[1.75] text-ink-2 max-w-[62ch] flex flex-col gap-1">
         {children}
       </div>
@@ -417,7 +417,7 @@ export function describeFont(fonts: ProjectFonts): string {
 
 // Project fonts are self-hosted (via next/font in this route's layout.tsx, or
 // globally for Archivo/DM Sans/Fraunces) instead of a linked Google Fonts
-// stylesheet — this maps each project's literal family name to its CSS
+// stylesheet - this maps each project's literal family name to its CSS
 // variable so the sample text below actually renders in that font.
 const PROJECT_FONT_VARS: Record<string, string> = {
   Poppins: 'var(--font-poppins)',

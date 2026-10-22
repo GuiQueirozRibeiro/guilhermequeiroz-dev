@@ -21,10 +21,10 @@ export async function generateMetadata({
   const project = PROJECTS.find((p) => p.id === id);
 
   if (!project) {
-    return { title: 'Guilherme Queiroz Ribeiro — Engenheiro de Software' };
+    return { title: 'Guilherme Queiroz Ribeiro - Engenheiro de Software' };
   }
 
-  const title = `${project.name} — Guilherme Queiroz Ribeiro`;
+  const title = `${project.name} - Guilherme Queiroz Ribeiro`;
   const description = project.tagline.pt;
   const url = `${SITE_URL}/project/${project.id}`;
   const image = resolveOgImage(project);
@@ -42,11 +42,11 @@ export async function generateMetadata({
       url,
       siteName: SITE_NAME,
       locale: OG_LOCALE,
-      images: [{ url: image, alt: project.name }],
+      images: [{ url: image.url, alt: project.name }],
     },
     twitter: {
       card: 'summary_large_image',
-      images: [{ url: image, alt: project.name }],
+      images: [{ url: image.url, alt: project.name }],
     },
   };
 }

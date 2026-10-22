@@ -72,7 +72,7 @@ export function Contact({ t }: ContactProps) {
 }
 
 // Isolated in its own component so the once-a-second tick only re-renders
-// this text node — not the whole Contact section (links list, CharReveal,
+// this text node - not the whole Contact section (links list, CharReveal,
 // footer) that used to re-render alongside it every second, forever, for as
 // long as the page stayed open.
 function Clock() {

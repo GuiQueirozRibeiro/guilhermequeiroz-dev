@@ -14,7 +14,7 @@ export function useMagnetic(ref: RefObject<HTMLElement | null>, strengthX = 0.35
 
     // Reading getBoundingClientRect() on every pointermove forces the browser
     // to flush layout on every single event (pointermove can fire dozens of
-    // times per frame on a high-poll-rate mouse) — that's what made the drag
+    // times per frame on a high-poll-rate mouse) - that's what made the drag
     // feel stuttery. The button's own on-screen position doesn't change mid-hover
     // (only its `transform` does, which getBoundingClientRect must resolve
     // through), so it's cached once on entry instead.

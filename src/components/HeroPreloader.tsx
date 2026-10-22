@@ -10,7 +10,7 @@ interface HeroPreloaderProps {
 
 const MAX_WAIT_TOTAL_MS = 8000;
 const MIN_VISIBLE_MS = 900;
-// The counter never reaches 100 on its own — it eases toward this ceiling
+// The counter never reaches 100 on its own - it eases toward this ceiling
 // continuously, so it always reads as one smooth climb rather than jumping
 // between whatever few real load events happen to resolve. Real completion
 // (fonts + full page load) then closes the remaining gap to 100 quickly.
@@ -19,7 +19,7 @@ const COSMETIC_DURATION = 1.4;
 
 /**
  * Full-screen loading "G" (0% -> 100%) that then flies into the hero's
- * kinetic word stack, landing exactly on the "G" of "GUILHERME" — one letter
+ * kinetic word stack, landing exactly on the "G" of "GUILHERME" - one letter
  * handing off from the loading glyph to the real headline, while the solid
  * backdrop slides up and off-screen to reveal the page underneath. Plays on
  * every load/reload of the home page; skips straight to `onComplete` only
@@ -35,7 +35,7 @@ export function HeroPreloader({ onComplete }: HeroPreloaderProps) {
   const percentRef = useRef<HTMLSpanElement>(null);
   // Captured once at mount: this component fires its callback exactly once,
   // shortly after mounting, so the closure from the initial render is all it
-  // ever needs — no re-render can invalidate it before that single call.
+  // ever needs - no re-render can invalidate it before that single call.
   const onCompleteRef = useRef(onComplete);
 
   useLayoutEffect(() => {
@@ -54,7 +54,7 @@ export function HeroPreloader({ onComplete }: HeroPreloaderProps) {
     }
 
     // A reload anywhere on the page should still land the visitor at the top
-    // to actually see the intro — the browser's own scroll restoration would
+    // to actually see the intro - the browser's own scroll restoration would
     // otherwise keep them mid-page while this plays out of view.
     if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
     window.scrollTo(0, 0);
@@ -67,7 +67,7 @@ export function HeroPreloader({ onComplete }: HeroPreloaderProps) {
     // can't cancel an already-in-flight Promise, so without this flag the
     // first (throwaway) invocation's `ready.then(...)` could still resolve
     // after its own cleanup ran and replay the whole finish() sequence on
-    // top of the second, real one — the entire animation visibly playing
+    // top of the second, real one - the entire animation visibly playing
     // twice back to back.
     let cancelled = false;
 
@@ -83,7 +83,7 @@ export function HeroPreloader({ onComplete }: HeroPreloaderProps) {
       onUpdate: () => paint(progress.value),
     });
 
-    // Real readiness (fonts + full page load) — the safety timeout below
+    // Real readiness (fonts + full page load) - the safety timeout below
     // guards slow/broken cases so the page is never stuck behind this.
     const ready = Promise.all([
       document.fonts && document.fonts.ready ? document.fonts.ready : Promise.resolve(),
@@ -105,7 +105,7 @@ export function HeroPreloader({ onComplete }: HeroPreloaderProps) {
       finished = true;
       clearTimeout(totalGuard);
       cosmeticTween.kill();
-      // Close whatever gap is left up to 100 quickly rather than snapping —
+      // Close whatever gap is left up to 100 quickly rather than snapping -
       // the counter still reads as one continuous climb, never a jump.
       gsap.to(progress, { value: 100, duration: 0.3, ease: 'power2.out', onUpdate: () => paint(progress.value) });
 
@@ -133,7 +133,7 @@ export function HeroPreloader({ onComplete }: HeroPreloaderProps) {
         // The "G" flies to its spot in the headline first...
         .to(glyph, { x: dx, y: dy, scale, duration: 1.1, ease: 'power3.inOut' }, 0.1)
         // ...then the backdrop slides up and off-screen, uncovering the hero
-        // underneath — the same beat as the Nexxivo reference's preloader.
+        // underneath - the same beat as the Nexxivo reference's preloader.
         .to(bgRef.current, { yPercent: -100, duration: 1.1, ease: 'power3.inOut' }, 0.4)
         // The real letter snaps in exactly as the flying one arrives...
         .call(() => gsap.set(targetEl, { opacity: 1 }), undefined, 1.15)

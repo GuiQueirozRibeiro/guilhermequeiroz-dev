@@ -34,7 +34,7 @@ export function Reveal({ children, delay = 0, as: Tag = 'div', y = 32, className
     const alreadyVisible = rect.top < vh - 40;
     if (alreadyVisible) return;
 
-    // blur() repaints every frame — desktop only, same rule as the hero.
+    // blur() repaints every frame - desktop only, same rule as the hero.
     const blur = window.innerWidth >= 768;
 
     const ctx = gsap.context(() => {
@@ -52,7 +52,7 @@ export function Reveal({ children, delay = 0, as: Tag = 'div', y = 32, className
     });
 
     return () => ctx.revert();
-    // Intentional one-time setup per mount — delay/y come from static call-site props.
+    // Intentional one-time setup per mount - delay/y come from static call-site props.
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -94,7 +94,7 @@ export function Section({ id, eyebrow, children, style = {} }: SectionProps) {
  * Renders string children as one span per character so CSS can roll each
  * letter up on `.btn:hover` (with a per-letter delay via the `--i` custom
  * property). Falls back to plain children when the content isn't a simple
- * string — the effect only makes sense for the short CTA labels it's used on.
+ * string - the effect only makes sense for the short CTA labels it's used on.
  */
 function HoverRollLabel({ children }: { children: React.ReactNode }) {
   if (typeof children !== 'string') return <span className="btn-label">{children}</span>;
@@ -127,7 +127,7 @@ function HoverRollLabel({ children }: { children: React.ReactNode }) {
 /**
  * Renders a `.btn-icon-wrap` with two stacked icons so CSS can roll the
  * resting one out on `.btn:hover` while the (accent-colored) `next` icon
- * rolls in underneath it — the icon-side counterpart to `HoverRollLabel`.
+ * rolls in underneath it - the icon-side counterpart to `HoverRollLabel`.
  */
 function HoverRollIcon({ icon, next }: { icon: React.ReactNode; next: React.ReactNode }) {
   return (
@@ -198,7 +198,7 @@ interface LazyVideoProps {
   style?: React.CSSProperties;
 }
 
-// Cover videos can be several MB — with plain autoPlay, the browser starts
+// Cover videos can be several MB - with plain autoPlay, the browser starts
 // fetching the whole thing the instant the element mounts, even if it's a
 // card far below the fold. Defer the fetch (and playback) until the element
 // is actually near the viewport.

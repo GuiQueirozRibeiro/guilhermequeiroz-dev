@@ -36,7 +36,7 @@ export function MarqueeFlipBoard({ lang }: MarqueeFlipBoardProps) {
     let idleInterval: ReturnType<typeof setInterval> | undefined;
     const removeListeners: (() => void)[] = [];
     // The idle re-flap keeps firing every few seconds for as long as the page
-    // is open, even long after this board has scrolled out of view — skip it
+    // is open, even long after this board has scrolled out of view - skip it
     // while offscreen so it isn't spawning GSAP timelines for nothing.
     let visible = true;
     const visibilityObserver = new IntersectionObserver(
@@ -52,7 +52,7 @@ export function MarqueeFlipBoard({ lang }: MarqueeFlipBoardProps) {
 
       letters.forEach((el) => { el.dataset.char = el.textContent ?? ''; });
 
-      /** Re-flaps every letter in a tile to its own current text — a quick "board update" flicker. Skips a tile that's already mid-shuffle. */
+      /** Re-flaps every letter in a tile to its own current text - a quick "board update" flicker. Skips a tile that's already mid-shuffle. */
       function shuffleTile(tile: HTMLElement, steps: number, stepDuration: number) {
         if (tile.dataset.shuffling === '1') return;
         tile.dataset.shuffling = '1';
@@ -80,7 +80,7 @@ export function MarqueeFlipBoard({ lang }: MarqueeFlipBoardProps) {
           once: true,
         },
         onComplete: () => {
-          // Ambient life after the reveal — every few seconds, one random
+          // Ambient life after the reveal - every few seconds, one random
           // tile re-flaps, like a real departure board quietly updating.
           idleInterval = setInterval(() => {
             if (!visible) return;

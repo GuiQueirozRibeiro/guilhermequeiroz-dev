@@ -8,14 +8,14 @@ import { OG_IMAGE, OG_IMAGE_HEIGHT, OG_IMAGE_WIDTH, OG_LOCALE, PERSON, SITE_NAME
 import './globals.css';
 
 // Only the weights actually referenced by a Tailwind `font-*` utility (or a
-// hardcoded `font-weight` in globals.css) anywhere in the app — verified via
+// hardcoded `font-weight` in globals.css) anywhere in the app - verified via
 // a full-repo grep before trimming. Every unused weight is a whole separate
 // font file the browser has to fetch; e.g. Archivo was shipping 5 weights
 // (400/500/600/700/900) for a family that's only ever rendered at 900
 // (`font-black`, hero word stack + preloader glyph).
 const dmSans = DM_Sans({
   subsets: ['latin'],
-  weight: ['400', '500', '600'], // 700 (font-bold) is never applied to DM Sans — every font-bold in the app pairs with font-mono, so it renders in JetBrains Mono instead
+  weight: ['400', '500', '600'], // 700 (font-bold) is never applied to DM Sans - every font-bold in the app pairs with font-mono, so it renders in JetBrains Mono instead
   variable: '--font-dm-sans',
   display: 'swap',
 });
@@ -29,20 +29,20 @@ const jetbrainsMono = JetBrains_Mono({
 
 const outfit = Outfit({
   subsets: ['latin'],
-  weight: ['600'], // every h1/h2/h3 in the app renders with font-semibold (600) — no other weight
+  weight: ['600'], // every h1/h2/h3 in the app renders with font-semibold (600) - no other weight
   variable: '--font-outfit',
   display: 'swap',
 });
 
 const archivo = Archivo({
   subsets: ['latin'],
-  weight: ['900'], // only ever used at font-black (900) — hero word stack + "2+" badge + preloader glyph
+  weight: ['900'], // only ever used at font-black (900) - hero word stack + "2+" badge + preloader glyph
   variable: '--font-archivo',
   display: 'swap',
 });
 
 const SITE_TITLE = 'Guilherme Queiroz Ribeiro | Engenheiro de Software · Mobile, Web & APIs';
-const SITE_DESCRIPTION = 'Engenheiro de software em Brasília. Apps React Native e Flutter, sites em Next.js e APIs em Node.js — do banco de dados à publicação nas lojas. Fundador da Exímia Tech.';
+const SITE_DESCRIPTION = 'Engenheiro de software em Brasília. Apps React Native e Flutter, sites em Next.js e APIs em Node.js - do banco de dados à publicação nas lojas. Fundador da Exímia Tech.';
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),

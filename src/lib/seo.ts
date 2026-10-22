@@ -1,13 +1,9 @@
 import type { Project } from '@/types';
 
 export const SITE_URL = 'https://guilhermequeiroz.dev';
-export const SITE_NAME = 'Guilherme Queiroz Ribeiro — Portfólio';
-// og:locale for the language the server-rendered HTML is actually in (see
-// docs/SEO.md, "Limitação conhecida: idioma único no HTML servido" — the
-// pt/en toggle is client-side only, so every route crawlers see is pt-BR).
+export const SITE_NAME = 'Guilherme Queiroz Ribeiro - Portfólio';
 export const OG_LOCALE = 'pt_BR';
 
-// Landscape 1200x630 card (photo + name), generated from the profile photo.
 export const OG_IMAGE = `${SITE_URL}/og-image.png`;
 export const OG_IMAGE_WIDTH = 1200;
 export const OG_IMAGE_HEIGHT = 630;
@@ -35,7 +31,7 @@ export const PERSON = {
     'Desenvolvedor Full Stack',
     'Software Engineer',
   ],
-  description: 'Engenheiro de software em Brasília. Apps React Native e Flutter, web em Next.js e APIs em Node.js/TypeScript — do banco de dados à publicação nas lojas. Fundador da Exímia Tech.',
+  description: 'Engenheiro de software em Brasília. Apps React Native e Flutter, web em Next.js e APIs em Node.js/TypeScript - do banco de dados à publicação nas lojas. Fundador da Exímia Tech.',
   worksFor: 'Sistema Boss',
   knowsAbout: ['React Native', 'Expo', 'Flutter', 'Next.js', 'TypeScript', 'Node.js', 'Prisma', 'Clean Architecture', 'SaaS multi-tenant', 'Offline-first'],
   url: SITE_URL,
@@ -43,22 +39,20 @@ export const PERSON = {
   sameAs: [CONTACT.github, CONTACT.linkedin, 'https://www.instagram.com/guilhermequeirozr/'],
 };
 
-/** og:image for /sobre — same landscape card as the rest of the site. */
 export const SOBRE_OG_IMAGE = {
   url: OG_IMAGE,
   width: OG_IMAGE_WIDTH,
   height: OG_IMAGE_HEIGHT,
+  alt: 'Guilherme Queiroz Ribeiro - Engenheiro de Software',
 };
 
-/**
- * Resolves the best available og:image for a project: an explicit `ogImage`,
- * then the first non-video gallery asset, then the site-wide fallback.
- */
-export function resolveOgImage(project: Project): string {
-  if (project.ogImage) return `${SITE_URL}${project.ogImage}`;
-
-  const staticGalleryItem = project.gallery.find((item) => !item.src.endsWith('.mp4'));
-  if (staticGalleryItem) return `${SITE_URL}${staticGalleryItem.src}`;
-
-  return OG_IMAGE;
+export function projectOgImage(project: Project) {
+  return {
+    url: project.ogImage ? `${SITE_URL}${project.ogImage}` : OG_IMAGE,
+    width: OG_IMAGE_WIDTH,
+    height: OG_IMAGE_HEIGHT,
+    alt: `${project.name} - ${project.type.pt}`,
+  };
 }
+
+export const resolveOgImage = projectOgImage;

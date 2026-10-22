@@ -10,12 +10,12 @@ interface CharRevealProps {
 }
 
 /**
- * Heading whose letters rise out of a line mask on scroll, one by one — the
+ * Heading whose letters rise out of a line mask on scroll, one by one - the
  * stagger spreads across the whole reveal (~0.8-1.6s) regardless of length,
  * so a short and a long heading both read at a similar pace. Nested markup
  * (e.g. an accent-colored <span>) keeps its own color: SplitText only wraps
  * text nodes in spans, so descendants inherit color through the cascade as
- * usual — no manual per-character repainting needed.
+ * usual - no manual per-character repainting needed.
  */
 export function CharReveal({ children, as: Tag = 'h2', className = '' }: CharRevealProps) {
   const ref = useRef<HTMLElement>(null);

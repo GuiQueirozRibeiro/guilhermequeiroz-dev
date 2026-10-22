@@ -27,7 +27,7 @@ const SpotlightCard: React.FC<SpotlightCardProps> = ({
     if (!rectRef.current || isFocused) return;
 
     // Reuse the rect captured on mouseenter instead of querying it on every
-    // move — mousemove fires far too often to force a synchronous reflow each time.
+    // move - mousemove fires far too often to force a synchronous reflow each time.
     const rect = rectRef.current;
     setPosition({ x: e.clientX - rect.left, y: e.clientY - rect.top });
   };

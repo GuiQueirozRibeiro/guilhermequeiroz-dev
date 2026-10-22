@@ -22,9 +22,9 @@ const GITHUB_USERNAME = CONTACT.githubUser;
 const STRINGS = {
   pt: {
     title: 'Atividade no GitHub',
-    sub: 'Contribuições dos últimos 12 meses — direto do meu perfil.',
+    sub: 'Contribuições dos últimos 12 meses - direto do meu perfil.',
     link: 'Ver perfil completo',
-    error: 'não consegui carregar as contribuições agora — tenta de novo mais tarde.',
+    error: 'não consegui carregar as contribuições agora - tenta de novo mais tarde.',
     available: 'Aberto a novas oportunidades',
     streakCurrent: (n: number) => `${n} dia${n === 1 ? '' : 's'} seguidos commitando`,
     streakStarting: 'começando um novo streak hoje',
@@ -32,9 +32,9 @@ const STRINGS = {
   },
   en: {
     title: 'GitHub activity',
-    sub: "Contributions over the last 12 months — pulled straight from my profile.",
+    sub: "Contributions over the last 12 months - pulled straight from my profile.",
     link: 'View full profile',
-    error: "couldn't load contributions right now — try again later.",
+    error: "couldn't load contributions right now - try again later.",
     available: 'Open to new opportunities',
     streakCurrent: (n: number) => `${n} day${n === 1 ? '' : 's'} streak going`,
     streakStarting: 'starting a new streak today',
@@ -71,7 +71,7 @@ const DEV_QUIPS: Record<Lang, string[]> = {
     'funciona na minha máquina 🤷',
     'git commit -m "fix" (de novo)',
     'café: sim. sono: não.',
-    '"depois eu refatoro" — eu, sempre',
+    '"depois eu refatoro" - eu, sempre',
     'prod tá on, reza',
   ],
   en: [
@@ -80,7 +80,7 @@ const DEV_QUIPS: Record<Lang, string[]> = {
     'works on my machine 🤷',
     'git commit -m "fix" (again)',
     'coffee: yes. sleep: no.',
-    '"I\'ll refactor it later" — me, always',
+    '"I\'ll refactor it later" - me, always',
     "prod is up, don't jinx it",
   ],
 };
@@ -125,7 +125,7 @@ function computeStreaks(contributions: { date: string; count: number }[]): Strea
       current += 1;
       continue;
     }
-    if (i === contributions.length - 1) continue; // today isn't over yet — no penalty
+    if (i === contributions.length - 1) continue; // today isn't over yet - no penalty
     break;
   }
   return { current, longest };
@@ -146,7 +146,7 @@ export function GithubActivity({ lang }: GithubActivityProps) {
 
   const [profile, setProfile] = useState<GitHubProfile | null>(null);
   const [streaks, setStreaks] = useState<Streaks | null>(null);
-  // Picked once per mount (lazy initializer), not inside the slides useMemo —
+  // Picked once per mount (lazy initializer), not inside the slides useMemo -
   // Math.random()/the current hour are impure reads and useMemo must stay pure.
   const [quipIndex] = useState(() => Math.floor(Math.random() * DEV_QUIPS.pt.length));
   const [mountHour] = useState(() => getSaoPauloHour());
@@ -163,7 +163,7 @@ export function GithubActivity({ lang }: GithubActivityProps) {
 
   // Same public contribution-data source the calendar itself uses under the
   // hood (see node_modules/react-github-calendar), fetched independently here
-  // just to derive streaks — decoupled on purpose so it doesn't depend on
+  // just to derive streaks - decoupled on purpose so it doesn't depend on
   // reaching into the calendar's internals.
   useEffect(() => {
     fetch(`https://github-contributions-api.jogruber.de/v4/${GITHUB_USERNAME}?y=last`)
@@ -206,7 +206,7 @@ export function GithubActivity({ lang }: GithubActivityProps) {
   // react-activity-calendar (used under react-github-calendar) renders real
   // <rect> day-blocks even in its own internal "loading" state (empty
   // placeholder data), then swaps in a brand-new set of <rect> elements once
-  // its data fetch resolves — so a one-shot "wait for the first rects" observer
+  // its data fetch resolves - so a one-shot "wait for the first rects" observer
   // ends up animating the placeholder blocks and going silent once they're
   // replaced. Instead, the observer keeps watching for the lifetime of the
   // component and every childList mutation re-applies the blink to whatever
@@ -217,7 +217,7 @@ export function GithubActivity({ lang }: GithubActivityProps) {
     if (!container || prefersReducedMotion()) return;
 
     let tweens: gsap.core.Tween[] = [];
-    // A full year of contributions is ~365+ day-cells — that's 365+ independent
+    // A full year of contributions is ~365+ day-cells - that's 365+ independent
     // repeat:-1/yoyo:true tweens on GSAP's ticker, forever, even long after the
     // user has scrolled past this card. Each one is cheap alone, but GSAP still
     // has to advance every tween on every ticker frame, so at this count it's a
@@ -327,7 +327,7 @@ export function GithubActivity({ lang }: GithubActivityProps) {
 
 
 // Owns the rotation's own interval/state so the tick every 4.5s only
-// re-renders this small subtree — not the whole GithubActivity section
+// re-renders this small subtree - not the whole GithubActivity section
 // (profile fetch state, the calendar wrapper, etc.) that was previously
 // re-rendered alongside it every time the slide advanced.
 function StatusTickerRotator({ slides }: { slides: StatusSlide[] }) {

@@ -13,8 +13,8 @@ interface GradientTextProps {
   yoyo?: boolean;
 }
 
-// This component is mounted a lot — every section's eyebrow label plus the
-// hero headline — so it used to mean N framer-motion `useAnimationFrame`
+// This component is mounted a lot - every section's eyebrow label plus the
+// hero headline - so it used to mean N framer-motion `useAnimationFrame`
 // loops running on every single frame, forever, regardless of whether the
 // element was even on screen. The whole effect is just a linearly cycling
 // `background-position`, which a plain CSS animation renders identically:
