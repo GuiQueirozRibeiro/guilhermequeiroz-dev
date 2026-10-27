@@ -10,7 +10,6 @@ import type { Lang, Theme, Translations } from '@/types';
 // Highlights/etc. on every page load, including `/project/[id]`.
 import { Nav } from '@/sections/Nav';
 import { Tweaks } from '@/sections/Tweaks';
-import { useScrollingTitle } from '@/hooks/useScrollingTitle';
 
 const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/ {
   language: 'pt',
@@ -52,7 +51,6 @@ export function AppShell({ children }: AppShellProps) {
   const [tweaksOn, setTweaksOn] = useState(false);
   const skipNextThemeWrite = useRef(true);
 
-  useScrollingTitle('Guilherme Queiroz - Software Engineer', 200, pathname === '/');
 
   // The inline script in layout.tsx already set the correct data-theme
   // attribute (from localStorage / prefers-color-scheme) before hydration -
