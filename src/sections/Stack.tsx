@@ -57,7 +57,7 @@ export function Stack({ t, lang }: StackProps) {
       </div>
 
       <Reveal>
-        <div className="grid grid-cols-[repeat(auto-fill,minmax(140px,1fr))] gap-3 items-start">
+        <div className="grid grid-cols-[repeat(auto-fill,minmax(148px,1fr))] gap-3 items-stretch">
           {items.map(key => (
             <IconTile key={key} iconKey={key} lang={lang} />
           ))}
@@ -81,18 +81,27 @@ export function IconTile({ iconKey, lang }: IconTileProps) {
 
   return (
     <div
-      className="group relative p-4 rounded-xl border border-line bg-card flex flex-col gap-2.5 overflow-hidden [transition:border-color_250ms_ease,transform_300ms_cubic-bezier(.2,.7,.15,1),box-shadow_300ms_ease] hover:-translate-y-[3px] hover:border-[var(--tile-color)] hover:shadow-[0_10px_30px_-10px_var(--tile-sqhadow)]"
+      className="group relative p-3.5 rounded-xl border border-line bg-card flex flex-col justify-between gap-3 overflow-hidden min-h-[108px] [transition:border-color_250ms_ease,transform_300ms_cubic-bezier(.2,.7,.15,1),box-shadow_300ms_ease] hover:-translate-y-[3px] hover:border-[var(--tile-color)] hover:shadow-[0_10px_30px_-10px_var(--tile-shadow)]"
       style={{ '--tile-color': tileColor, '--tile-shadow': tileShadow } as React.CSSProperties}
     >
       <div
-        className="w-10 h-10 transition-transform duration-500 ease-[cubic-bezier(.2,.7,.15,1)] group-hover:scale-[1.08] group-hover:-rotate-[4deg]"
+        className="w-9 h-9 transition-transform duration-500 ease-[cubic-bezier(.2,.7,.15,1)] group-hover:scale-[1.08] group-hover:-rotate-[4deg]"
         style={{ color: icon.color }}
       >
-        <svg width="40" height="40" viewBox="0 0 48 48">{icon.svg}</svg>
+        <svg width="36" height="36" viewBox="0 0 48 48">{icon.svg}</svg>
       </div>
       <div>
-        <div className="text-[13.5px] font-medium tracking-[-0.01em]">{icon.label}</div>
-        <div className="font-mono text-[10.5px] text-ink-3 leading-[1.45] mt-1 overflow-hidden max-h-0 opacity-0 group-hover:max-h-[60px] group-hover:opacity-100 transition-[max-height,opacity] duration-[350ms,300ms] ease">
+        <div
+          title={icon.label}
+          className={`font-medium tracking-[-0.015em] leading-snug ${
+            icon.label.length > 14
+              ? 'text-[12px] xl:text-[12.5px] whitespace-nowrap overflow-hidden text-ellipsis'
+              : 'text-[13px] xl:text-[13.5px] whitespace-nowrap'
+          }`}
+        >
+          {icon.label}
+        </div>
+        <div className="font-mono text-[10px] text-ink-3 leading-[1.4] mt-1 overflow-hidden max-h-0 opacity-0 group-hover:max-h-[60px] group-hover:opacity-100 transition-[max-height,opacity] duration-[350ms,300ms] ease">
           {icon.desc[lang]}
         </div>
       </div>
