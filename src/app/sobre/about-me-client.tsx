@@ -7,7 +7,7 @@ import { useAppShell } from '../app-shell';
 import { AboutMe } from '@/sections/AboutMe';
 
 export function AboutMeClient() {
-  const { t, onGoHome } = useAppShell();
+  const { t, lang, onGoHome } = useAppShell();
 
-  return <AboutMe t={t} onGoHome={onGoHome} />;
+  return <AboutMe t={t} lang={lang} onGoHome={onGoHome} />;
 }

@@ -2,10 +2,11 @@
 
 import Image from 'next/image';
 import { Section, Reveal, BtnGhost } from '../ui';
-import type { Translations } from '../types';
+import type { Lang, Translations } from '../types';
 
 interface AboutMeProps {
   t: Translations;
+  lang?: Lang;
   onGoHome: () => void;
 }
 
@@ -49,7 +50,7 @@ const HOBBY_ICONS: Record<string, React.ReactNode> = {
   ),
 };
 
-export function AboutMe({ t, onGoHome }: AboutMeProps) {
+export function AboutMe({ t, lang = 'pt', onGoHome }: AboutMeProps) {
   const at = t.aboutMe;
 
   return (
@@ -96,28 +97,61 @@ export function AboutMe({ t, onGoHome }: AboutMeProps) {
 
               <div className="mt-2 rounded-2xl border border-line bg-bg-2 p-6 flex flex-col gap-4">
                 <div>
-                  <div className="text-[15px] font-semibold tracking-[-0.01em] mb-1">{at.resumeTitle}</div>
-                  <p className="text-[13.5px] leading-[1.7] text-ink-3">{at.resumeSub}</p>
+                  <div className="text-[15px] font-semibold tracking-[-0.01em] mb-1">
+                    {lang === 'pt' ? 'Currículo Profissional' : 'Professional Resume'}
+                  </div>
+                  <p className="text-[13.5px] leading-[1.7] text-ink-3">
+                    {lang === 'pt'
+                      ? 'Faça o download do currículo principal atualizado em PDF ou visualize online.'
+                      : 'Download the primary updated resume in PDF format or view online.'}
+                  </p>
                 </div>
                 <div className="flex flex-wrap items-center gap-3">
-                  <a
-                    href="/curriculo-pt.pdf"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl border border-line bg-card hover:border-accent text-[13px] font-medium transition-colors"
-                  >
-                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-                    {at.resumePt}
-                  </a>
-                  <a
-                    href="/curriculo-en.pdf"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl border border-line bg-card hover:border-accent text-[13px] font-medium transition-colors"
-                  >
-                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-                    {at.resumeEn}
-                  </a>
+                  {lang === 'pt' ? (
+                    <>
+                      <a
+                        href="/Curriculo Guilherme Queiroz Ribeiro.pdf"
+                        target="_blank"
+                        rel="noreferrer"
+                        download="Curriculo Guilherme Queiroz Ribeiro.pdf"
+                        className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-ink text-bg text-[13.5px] font-semibold hover:opacity-90 transition-opacity shadow-sm"
+                      >
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                        <span>Baixar Currículo Principal (PDF)</span>
+                      </a>
+                      <a
+                        href="/Resume Guilherme Queiroz Ribeiro.pdf"
+                        target="_blank"
+                        rel="noreferrer"
+                        download="Resume Guilherme Queiroz Ribeiro.pdf"
+                        className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl border border-line bg-card hover:border-ink-2 text-ink-2 hover:text-ink text-[13px] font-medium transition-colors"
+                      >
+                        <span>English Resume (EN) ↗</span>
+                      </a>
+                    </>
+                  ) : (
+                    <>
+                      <a
+                        href="/Resume Guilherme Queiroz Ribeiro.pdf"
+                        target="_blank"
+                        rel="noreferrer"
+                        download="Resume Guilherme Queiroz Ribeiro.pdf"
+                        className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-ink text-bg text-[13.5px] font-semibold hover:opacity-90 transition-opacity shadow-sm"
+                      >
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                        <span>Download Primary Resume (PDF)</span>
+                      </a>
+                      <a
+                        href="/Curriculo Guilherme Queiroz Ribeiro.pdf"
+                        target="_blank"
+                        rel="noreferrer"
+                        download="Curriculo Guilherme Queiroz Ribeiro.pdf"
+                        className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl border border-line bg-card hover:border-ink-2 text-ink-2 hover:text-ink text-[13px] font-medium transition-colors"
+                      >
+                        <span>Versão em Português (PT) ↗</span>
+                      </a>
+                    </>
+                  )}
                 </div>
               </div>
 

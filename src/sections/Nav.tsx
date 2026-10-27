@@ -111,16 +111,31 @@ export function Nav({ lang, setLang, t, theme, setTheme, onRouteHome }: NavProps
               )}
             </button>
 
-            <div className="flex text-[11px] font-mono border border-line rounded-full p-0.5">
-              {(['pt', 'en'] as Lang[]).map(language => (
-                <button
-                  key={language}
-                  onClick={() => setLang(language)}
-                  className={`py-1 px-2.5 rounded-full uppercase tracking-[0.1em] transition-all duration-200 ${lang === language ? 'bg-ink text-bg' : 'bg-transparent text-ink-3'}`}
-                >
-                  {language}
-                </button>
-              ))}
+            {/* Language Switch Toggle */}
+            <div className="relative flex items-center bg-bg-2 border border-line rounded-full p-0.5 text-[11px] font-mono select-none">
+              <span
+                className={`absolute top-0.5 bottom-0.5 w-[calc(50%-2px)] rounded-full bg-ink transition-transform duration-250 ease-[cubic-bezier(0.16,1,0.3,1)] shadow-sm pointer-events-none ${
+                  lang === 'en' ? 'translate-x-[calc(100%+2px)]' : 'translate-x-0'
+                }`}
+              />
+              <button
+                type="button"
+                onClick={() => setLang('pt')}
+                className={`relative z-10 py-1 px-2.5 rounded-full uppercase tracking-[0.08em] transition-colors duration-200 font-semibold ${
+                  lang === 'pt' ? 'text-bg' : 'text-ink-3 hover:text-ink-2'
+                }`}
+              >
+                PT
+              </button>
+              <button
+                type="button"
+                onClick={() => setLang('en')}
+                className={`relative z-10 py-1 px-2.5 rounded-full uppercase tracking-[0.08em] transition-colors duration-200 font-semibold ${
+                  lang === 'en' ? 'text-bg' : 'text-ink-3 hover:text-ink-2'
+                }`}
+              >
+                EN
+              </button>
             </div>
 
             <a
@@ -218,16 +233,31 @@ export function Nav({ lang, setLang, t, theme, setTheme, onRouteHome }: NavProps
               )}
             </button>
 
-            <div className="flex text-[11px] font-mono border border-line rounded-full p-0.5">
-              {(['pt', 'en'] as Lang[]).map(language => (
-                <button
-                  key={language}
-                  onClick={() => setLang(language)}
-                  className={`py-1 px-2.5 rounded-full uppercase tracking-[0.1em] transition-all duration-200 ${lang === language ? 'bg-ink text-bg' : 'bg-transparent text-ink-3'}`}
-                >
-                  {language}
-                </button>
-              ))}
+            {/* Language Switch Toggle Mobile */}
+            <div className="relative flex items-center bg-bg-2 border border-line rounded-full p-0.5 text-[11px] font-mono select-none">
+              <span
+                className={`absolute top-0.5 bottom-0.5 w-[calc(50%-2px)] rounded-full bg-ink transition-transform duration-250 ease-[cubic-bezier(0.16,1,0.3,1)] shadow-sm pointer-events-none ${
+                  lang === 'en' ? 'translate-x-[calc(100%+2px)]' : 'translate-x-0'
+                }`}
+              />
+              <button
+                type="button"
+                onClick={() => setLang('pt')}
+                className={`relative z-10 py-1 px-2.5 rounded-full uppercase tracking-[0.08em] transition-colors duration-200 font-semibold ${
+                  lang === 'pt' ? 'text-bg' : 'text-ink-3 hover:text-ink-2'
+                }`}
+              >
+                PT
+              </button>
+              <button
+                type="button"
+                onClick={() => setLang('en')}
+                className={`relative z-10 py-1 px-2.5 rounded-full uppercase tracking-[0.08em] transition-colors duration-200 font-semibold ${
+                  lang === 'en' ? 'text-bg' : 'text-ink-3 hover:text-ink-2'
+                }`}
+              >
+                EN
+              </button>
             </div>
           </div>
         </div>

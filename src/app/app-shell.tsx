@@ -94,9 +94,18 @@ export function AppShell({ children }: AppShellProps) {
     return () => window.removeEventListener('message', onMsg);
   }, []);
 
+  const [isChangingLang, setIsChangingLang] = useState(false);
+
   const updateLang = (l: Lang) => {
-    setLang(l);
-    window.parent.postMessage({ type: '__edit_mode_set_keys', edits: { language: l } }, '*');
+    if (l === lang) return;
+    setIsChangingLang(true);
+    setTimeout(() => {
+      setLang(l);
+      window.parent.postMessage({ type: '__edit_mode_set_keys', edits: { language: l } }, '*');
+      setTimeout(() => {
+        setIsChangingLang(false);
+      }, 60);
+    }, 160);
   };
 
   const updateTheme = (v: Theme) => {
@@ -123,7 +132,9 @@ export function AppShell({ children }: AppShellProps) {
     <AppShellContext.Provider value={{ lang, setLang: updateLang, theme, setTheme: updateTheme, t, onOpenProject, onGoHome }}>
       <Fragment>
         <Nav lang={lang} setLang={updateLang} t={t} theme={theme} setTheme={updateTheme} onRouteHome={onGoHome} />
-        {children}
+        <div className={`transition-all duration-300 ease-out ${isChangingLang ? 'opacity-0 translate-y-1 blur-[1px] pointer-events-none' : 'opacity-100 translate-y-0 blur-0'}`}>
+          {children}
+        </div>
         <Tweaks enabled={tweaksOn} t={t} lang={lang} setLang={updateLang} theme={theme} setTheme={updateTheme} />
       </Fragment>
     </AppShellContext.Provider>
