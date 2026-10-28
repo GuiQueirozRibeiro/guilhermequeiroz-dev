@@ -2,8 +2,8 @@ import type { Metadata } from 'next';
 import { OG_LOCALE, SITE_NAME, SITE_URL, SOBRE_OG_IMAGE } from '@/lib/seo';
 import { AboutMeClient } from './about-me-client';
 
-const TITLE = 'Sobre mim - Guilherme Queiroz Ribeiro | Engenheiro de Software';
-const DESCRIPTION = 'Um pouco além do código: quem é Guilherme Queiroz Ribeiro, engenheiro de software em Brasília - trajetória, mentoria e currículo para baixar.';
+const TITLE = 'Sobre mim - Guilherme Ribeiro';
+const DESCRIPTION = 'Um pouco além do código: quem é Guilherme Ribeiro, engenheiro de software em Brasília - trajetória, mentoria e currículo para baixar.';
 const PAGE_URL = `${SITE_URL}/sobre`;
 
 export const metadata: Metadata = {

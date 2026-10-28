@@ -75,7 +75,7 @@ export function Nav({ lang, setLang, t, theme, setTheme, onRouteHome }: NavProps
           >
             <Image src="/logo.png" alt="Logo" width={26} height={26} className="w-[26px] h-[26px] object-contain rounded-[7px]" />
             <span className={`text-[13.5px] ${scrolled ? 'hidden' : 'inline'}`}>
-              guilherme<span className="text-ink-3">queiroz</span>
+              guilherme<span className="text-ink-3">ribeiro</span>
             </span>
           </a>
 

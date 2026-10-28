@@ -31,7 +31,7 @@ export function Hero({ t, lang }: HeroProps) {
                 {t.hero.role}
               </p>
               <h1 className="text-[clamp(32px,5vw,56px)] font-bold tracking-tight text-white leading-[1.08]">
-                Guilherme Queiroz Ribeiro
+                Guilherme Ribeiro
               </h1>
               <p className="text-[clamp(18px,2.5vw,26px)] font-medium text-zinc-300 mt-2 leading-snug">
                 {lang === 'pt'

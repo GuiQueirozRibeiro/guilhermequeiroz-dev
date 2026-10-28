@@ -1,7 +1,7 @@
 import type { Project } from '@/types';
 
 export const SITE_URL = 'https://guilhermequeiroz.dev';
-export const SITE_NAME = 'Guilherme Queiroz Ribeiro - Portfólio';
+export const SITE_NAME = 'Guilherme Ribeiro';
 export const OG_LOCALE = 'pt_BR';
 
 export const OG_IMAGE = `${SITE_URL}/og-image.png`;

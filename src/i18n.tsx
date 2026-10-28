@@ -6,7 +6,7 @@ export const I18N: Record<Lang, Translations> = {
     hero: {
       role: "Engenheiro de Software",
       availability: "Construindo no ar · Brasília, DF",
-      seoLead: "Guilherme Queiroz Ribeiro - Engenheiro de Software em Brasília.",
+      seoLead: "Guilherme Ribeiro - Engenheiro de Software em Brasília.",
       headline_a: "Do banco de dados",
       headline_b: "à loja de apps:",
       headline_c: "aplicações e plataformas em produção.",
@@ -101,7 +101,7 @@ export const I18N: Record<Lang, Translations> = {
       title_b: "sobre software?",
       sub: "Aberto a desafios corporativos, liderança técnica e consultoria. Respondo em até 24h úteis.",
       whatsapp: "WhatsApp", linkedin: "LinkedIn", github: "GitHub", email: "E-mail",
-      footer: "© 2026 Guilherme Queiroz Ribeiro. Brasília, DF.",
+      footer: "© 2026 Guilherme Ribeiro. Brasília, DF.",
     },
     tweaks: { title: "Configurações", lang: "Idioma", theme: "Tema" },
     notFound: {
@@ -119,7 +119,7 @@ export const I18N: Record<Lang, Translations> = {
     hero: {
       role: "Software Engineer",
       availability: "Building live · Brasília, Brazil",
-      seoLead: "Guilherme Queiroz Ribeiro - Software Engineer in Brasília, Brazil.",
+      seoLead: "Guilherme Ribeiro - Software Engineer in Brasília, Brazil.",
       headline_a: "From database architecture",
       headline_b: "to the app store:",
       headline_c: "enterprise apps and web platforms in production.",
@@ -214,7 +214,7 @@ export const I18N: Record<Lang, Translations> = {
       title_b: "about software",
       sub: "Open to engineering opportunities, technical leadership, and consulting. Response within 24 business hours.",
       whatsapp: "WhatsApp", linkedin: "LinkedIn", github: "GitHub", email: "Email",
-      footer: "© 2026 Guilherme Queiroz Ribeiro. Brasília, Brazil.",
+      footer: "© 2026 Guilherme Ribeiro. Brasília, Brazil.",
     },
     tweaks: { title: "Settings", lang: "Language", theme: "Theme" },
     notFound: {

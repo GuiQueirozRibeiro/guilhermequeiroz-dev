@@ -21,10 +21,10 @@ export async function generateMetadata({
   const project = PROJECTS.find((p) => p.id === id);
 
   if (!project) {
-    return { title: 'Guilherme Queiroz Ribeiro - Engenheiro de Software' };
+    return { title: 'Guilherme Ribeiro' };
   }
 
-  const title = `${project.name} - Guilherme Queiroz Ribeiro`;
+  const title = `${project.name} - Guilherme Ribeiro`;
   const description = project.tagline.pt;
   const url = `${SITE_URL}/project/${project.id}`;
   const image = resolveOgImage(project);

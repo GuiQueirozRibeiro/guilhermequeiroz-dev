@@ -41,7 +41,7 @@ const archivo = Archivo({
   display: 'swap',
 });
 
-const SITE_TITLE = 'Guilherme Queiroz Ribeiro | Engenheiro de Software · Mobile, Web & APIs';
+const SITE_TITLE = 'Guilherme Ribeiro';
 const SITE_DESCRIPTION = 'Engenheiro de software em Brasília. Apps React Native e Flutter, sites em Next.js e APIs em Node.js - do banco de dados à publicação nas lojas. Fundador da Exímia Tech.';
 
 export const metadata: Metadata = {
